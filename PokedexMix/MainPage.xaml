@@ -8,8 +8,29 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    
+    
     <StackPanel>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Click="Button_Click_1">
+            <TextBlock Text="CALL API NOW PLZ"></TextBlock>
+        </Button>
         <Button Content="Get Weather" Click="Button_Click"></Button>
-        <TextBlock Name="ResultTextBlock"/>
+        <TextBlock Name="ResultTextBlock" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <ListView x:Name="ListViewTest">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Image Source=""></Image>
+                        <TextBlock>
+                            <Run Text="{Binding NamePokemon}"></Run>
+                            <LineBreak></LineBreak>
+                            <Run Text="{Binding link}"></Run>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackPanel>
+
+    
 </Page>

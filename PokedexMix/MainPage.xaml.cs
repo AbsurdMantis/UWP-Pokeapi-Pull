@@ -25,11 +25,19 @@ namespace PokedexMix
     public sealed partial class MainPage : Page
     {
         ApiRequest api = new ApiRequest();
+        
+        
 
         public MainPage()
         {
+            
             this.InitializeComponent();
+            PokeList weather = api.GetList();
+            this.DataContext = weather;
+            
         }
+
+   
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -48,6 +56,16 @@ namespace PokedexMix
             
             
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            PokeList weather = api.GetList();
+            Pokemon poketest = new Pokemon();
+
+           
+            ListViewTest.ItemsSource = weather.listPokemon;
+            
         }
     }
 }

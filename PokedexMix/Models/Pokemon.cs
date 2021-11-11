@@ -17,7 +17,7 @@ namespace PokedexAPI_Test.Models
         [JsonProperty("url")]
         public Uri link { get; set; }
 
-        /*public Image GetImage()
+        public System.Drawing.Image GetImage()
         {
             string dir = link.ToString();
             dir = dir.Substring(0, dir.Length - 1);
@@ -34,6 +34,6 @@ namespace PokedexAPI_Test.Models
                     return Bitmap.FromStream(stream);
                 }
             }
-        }*/
+        }
     }
 }
