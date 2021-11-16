@@ -10,6 +10,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using static PokedexAPI_Test.ApiRequest;
+using static PokedexMix.Models.PokemonDataWrapper;
 
 namespace PokedexMix
 {
@@ -17,24 +18,21 @@ namespace PokedexMix
         public class UnitRequest
         {
             public string url { get; set; }
-            private int actual = 0;
+            public int actual = 0;
             ApiRequest api = new ApiRequest();
 
             public UnitRequest()
             {
-                
-                PokeList test = api.GetList();
+            PokeList test = api.GetList();
 
-            //url = test.listPokemon[1].link.ToString();
+            
 
-            for (int i = 0; i < 10; i++)
-            {
-               url = test.listPokemon[i].link.ToString();
-            }
+            url = test.listPokemon[actual].link.ToString();
+            
 
             }
 
-            public PokemonDataWrapper.Pokemon GetPokey()
+            public Pokemon GetPokey()
             {
                 var query = (HttpWebRequest)WebRequest.Create(url);
                 query.Method = "GET";
@@ -56,10 +54,11 @@ namespace PokedexMix
                             {
                                 string responseText = Reader.ReadToEnd();
 
-                                PokemonDataWrapper.Pokemon pokelist = JsonConvert.DeserializeObject<PokemonDataWrapper.Pokemon>(responseText);
-                                //actual = +10;
+                                Pokemon pokelist = JsonConvert.DeserializeObject<Pokemon>(responseText);
 
-                                return pokelist;
+                                actual =+ 1;
+
+                            return pokelist;
                             }
                         }
                     }

@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using static PokedexMix.Models.PokemonDataWrapper;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -35,7 +36,7 @@ namespace PokedexMix
             
             this.InitializeComponent();
             PokeList weather = api.GetList();
-            PokemonDataWrapper.Pokemon X = api2.GetPokey();
+            Pokemon X = api2.GetPokey();
             this.DataContext = X;
             
         }
@@ -63,14 +64,16 @@ namespace PokedexMix
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            PokeList weather = api.GetList();
-            Pokemon poketest = new Pokemon();
-            PokemonDataWrapper.Pokemon X = api2.GetPokey();
-           
+            //PokeList weather = api.GetList();
+            //Pokemon poketest = new Pokemon();
+            Pokemon X = api2.GetPokey();
+
+            List<Pokemon> listPkm = new List<Pokemon>();
+
+            listPkm.Add(X);
 
 
-
-            ListViewTest.ItemsSource = X.NamePokemonT;
+            ListViewTest.ItemsSource = listPkm;
             
         }
     }

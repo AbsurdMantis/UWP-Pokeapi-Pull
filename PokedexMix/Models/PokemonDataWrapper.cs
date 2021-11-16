@@ -10,26 +10,21 @@ namespace PokedexMix.Models
 {
     public class PokemonDataWrapper
     {
+        //objeto pokemon
         public class Pokemon
         {
+            //var x
             [JsonProperty("name")]
             public string NamePokemonT { get; set; }
             //[JsonProperty("sprites")]
             //public Sprites Sprites { get; set; }
 
+            //var y
             [JsonProperty("id")]
             public int Id { get; set; }
-
-            
         }
 
-        [JsonProperty("data")]
-        public Pokemon data { get; set; }
-
-
-
-
-
-
     }
+
+    
 }

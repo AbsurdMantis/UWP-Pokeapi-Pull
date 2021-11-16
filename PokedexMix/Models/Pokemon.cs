@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace PokedexAPI_Test.Models
 {
-    public class Pokemon
+    public class PokemonL
     {
         [JsonProperty("name")]
         public string NamePokemon { get; set; }

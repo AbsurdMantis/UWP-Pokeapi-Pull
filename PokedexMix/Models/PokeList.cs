@@ -19,6 +19,6 @@ namespace PokedexAPI_Test.Models
         public object Previous { get; set; }
 
         [JsonProperty("results")]
-        public List<Pokemon> listPokemon { get; set; }
+        public List<PokemonL> listPokemon { get; set; }
     }
 }
