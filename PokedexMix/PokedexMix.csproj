@@ -125,6 +125,8 @@
     </Compile>
     <Compile Include="Models\PokeList.cs" />
     <Compile Include="Models\Pokemon.cs" />
+    <Compile Include="Models\PokemonDataWrapper.cs" />
+    <Compile Include="PokemonUnitRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -22,9 +22,9 @@
                     <StackPanel>
                         <Image Source=""></Image>
                         <TextBlock>
-                            <Run Text="{Binding NamePokemon}"></Run>
+                            <Run Text="{Binding NamePokemonT}"></Run> 
                             <LineBreak></LineBreak>
-                            <Run Text="{Binding link}"></Run>
+                            <Run Text="{Binding Id}"></Run>
                         </TextBlock>
                     </StackPanel>
                 </DataTemplate>

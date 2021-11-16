@@ -1,5 +1,6 @@
 ﻿using PokedexAPI_Test;
 using PokedexAPI_Test.Models;
+using PokedexMix.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -25,6 +26,7 @@ namespace PokedexMix
     public sealed partial class MainPage : Page
     {
         ApiRequest api = new ApiRequest();
+        UnitRequest api2 = new UnitRequest();
         
         
 
@@ -33,7 +35,8 @@ namespace PokedexMix
             
             this.InitializeComponent();
             PokeList weather = api.GetList();
-            this.DataContext = weather;
+            PokemonDataWrapper.Pokemon X = api2.GetPokey();
+            this.DataContext = X;
             
         }
 
@@ -62,9 +65,12 @@ namespace PokedexMix
         {
             PokeList weather = api.GetList();
             Pokemon poketest = new Pokemon();
-
+            PokemonDataWrapper.Pokemon X = api2.GetPokey();
            
-            ListViewTest.ItemsSource = weather.listPokemon;
+
+
+
+            ListViewTest.ItemsSource = X.NamePokemonT;
             
         }
     }
